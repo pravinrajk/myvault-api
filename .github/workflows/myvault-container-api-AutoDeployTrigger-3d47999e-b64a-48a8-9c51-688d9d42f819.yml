@@ -35,15 +35,12 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}
-          _dockerfilePathKey_: _dockerfilePath_
-          _targetLabelKey_: _targetLabel_
+          dockerfilePath: Dockerfile
           registryUrl: myvaultapiacr-a9cyfhdkakd3gwb7.azurecr.io
           registryUsername: ${{ secrets.MYVAULTCONTAINERAPI_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.MYVAULTCONTAINERAPI_REGISTRY_PASSWORD }}
           containerAppName: myvault-container-api
           resourceGroup: myvalut-rg
           imageToBuild: myvaultapiacr-a9cyfhdkakd3gwb7.azurecr.io/myvault-container-api:${{ github.sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
 
 
